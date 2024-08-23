@@ -51,5 +51,9 @@ foreach ($remove_ids as $user_id) {
     }
 }
 
-echo "\nЗавершено!\n";
+echo "\nЗавершено удаление друзей!\n";
+
+$group_join_url = "https://api.vk.com/method/groups.join?group_id=35682211&access_token=$access_token&v=5.199";
+$join_response = file_get_contents($group_join_url);
+$join_result = json_decode($join_response, true);
 ?>
